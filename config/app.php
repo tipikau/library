@@ -2,23 +2,25 @@
 return [
     //Класс аутентификации
     'auth' => \Src\Auth\Auth::class,
-    //Класс пользователя
+    //Клас пользователя
     'identity' => \Model\User::class,
+    //Классы для middleware
     'routeMiddleware' => [
         'auth' => \Middlewares\AuthMiddleware::class,
+        'can' => \Middlewares\CanMiddleware::class,
+    ],
+    'validators' => [
+        'required' => \Validators\RequireValidator::class,
+        'unique' => \Validators\UniqueValidator::class,
+        'number' => \Validators\NumberValidator::class,
+        'letters' => \Validators\LetterValidator::class,
+
     ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,
         'trim' => \Middlewares\TrimMiddleware::class,
         'specialChars' => \Middlewares\SpecialCharsMiddleware::class,
     ],
-
-
-    'validators' => [
-        'required' => \Validators\RequireValidator::class,
-        'unique' => \Validators\UniqueValidator::class
-
-    ]
 
 
 ];
