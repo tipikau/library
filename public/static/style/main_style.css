@@ -7,6 +7,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: #FDFCFB;
+    overflow: hidden;
 }
 
 h1 {
@@ -44,6 +45,7 @@ form {
     justify-content: left;
     flex-direction: column;
     width: 500px;
+    align-items: center;
 }
 
 .submit-btn{
